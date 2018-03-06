@@ -61,15 +61,18 @@ First, I just want to take a look at a single random image, from the training da
 
 Next, lets plot the distribution of labels in the Training Data-Set, so we know which labels occur more, 
 and should be correctly classified:
+
 ![Training Data Histogram][image2]
 
 Now, lets also plot the distribution of labels in the Validation Data-Set, to determine how closely it mirrors the training data-set. 
+
 ![Validation Data Histogram][image3]
 
 Now, we can see both histograms are similar, however, they are skewed toward the left, which means we have more samples of labels #0-19, than of labels #20-42.
 This means that once we train the model, it should be much accurate at predicting labels with higher number of samples available (e.g. #1, #2, #10 etc.), than the ones with less samples (e.g. #21, #22, #41, #42)
 
 Finally, lets also plot the distribution of labels in the Test Data-Set, again, to determine how closely it mirrors the training data-set. 
+
 ![Test Data Histogram][image4]
 
 Since this also mirrors the Training data-set histogram and the Validation data-set histogram, this means that the test-set evaluation should be fairly predictable - i.e. it will be similar to the accuracy of validation data-set, using the training data-set.
@@ -193,11 +196,13 @@ If a well known architecture was chosen:
 	* In this model, we have: Training accuracy (99%) > Validation Accuracy (97%) > Test Accuracy (95%)
 	* This means that the wild-set of test-data is least accuracte, but faily accurate. More importantly, since we validated it with the validation set, the validation set has higher accuracy. Finally, the training itself was done with the training set, which has the highest accuracy. Therefore, the accuracies obtained provide strong evidence that the model is working well. 
  
-#####Additional section: Further improvements:
+**Additional section: Further improvements:**
+
 If I had more time, and some more opportunity to research, I would like to:
-1. Add additional convolution layers
-2. Work individually with all 3 channels (as opposed to single Gray-channel)
-3. Superimpose/Concatenate Convolution-Layer-1 and Convolution-Layer-2 outputs & then passing it to the Fully-Connected layer as described in [this paper in Fig. 2](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
+
+* 1. Add additional convolution layers
+* 2. Work individually with all 3 channels (as opposed to single Gray-channel)
+* 3. Superimpose/Concatenate Convolution-Layer-1 and Convolution-Layer-2 outputs & then passing it to the Fully-Connected layer as described in [this paper in Fig. 2](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
  
 
 ### Test a Model on New Images
